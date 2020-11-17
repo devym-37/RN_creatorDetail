@@ -22,6 +22,7 @@ module.exports = {
         printWidth: 100,
       },
     ],
+    'global-require': 0,
   },
   plugins: ['prettier'],
 };
