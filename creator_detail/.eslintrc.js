@@ -8,7 +8,6 @@ module.exports = {
   ],
   parser: 'babel-eslint',
   rules: {
-    'import/no-unresolved': 'off',
     'react/jsx-filename-extension': [
       1,
       {
