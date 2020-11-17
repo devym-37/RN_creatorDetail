@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Profile from '../Profile/Profile';
 import CreatorInfo from '../CreatorInfo/index';
