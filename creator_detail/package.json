@@ -11,6 +11,7 @@
     "dev-tools": "react-devtools"
   },
   "dependencies": {
+    "@react-navigation/native": "^5.8.9",
     "axios": "^0.21.0",
     "react": "16.13.1",
     "react-native": "0.63.3"
