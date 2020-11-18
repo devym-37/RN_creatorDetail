@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   mainImage: {
     height: 180,
-    backgroundColor: 'green',
+    width: '100%',
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
     borderColor: '#dddddd',
@@ -60,7 +60,7 @@ const CreatorVideoCard = ({ creatorInfo }) => {
     release_date,
     poster_path,
     backdrop_path,
-  } = creatorInfo[0];
+  } = creatorInfo.item;
 
   return (
     <View style={styles.container}>
@@ -91,7 +91,7 @@ const CreatorVideoCard = ({ creatorInfo }) => {
         <Image
           style={styles.mainImage}
           source={{ uri: `http://image.tmdb.org/t/p/w300${poster_path}` }}
-          resizeMode="cover"
+          resizeMode='stretch'
         />
       </TouchableOpacity>
       <View style={styles.subContainer}>
