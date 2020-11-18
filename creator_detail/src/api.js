@@ -11,5 +11,9 @@ const api = axios.create({
 
 export const getDataApi = {
   profile: () => api.get('person/287'),
-  dataList: () => api.get('movie/top_rated'),
+  dataList: (page) => api.get('movie/top_rated', {
+    params: {
+      page: page
+    }
+  }),
 };
