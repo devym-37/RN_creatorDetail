@@ -6,12 +6,13 @@ import {
   StyleSheet,
   FlatList,
   ActivityIndicator,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import CreatorVideoCard from '../../components/CreatorVideoCard';
 import { getDataApi } from '../../api';
 import { renderer } from 'react-test-renderer';
-
+import CreatorTagCard from '../../components/CreatorTagCard';
 
 const styles = StyleSheet.create({
   container: {
@@ -62,21 +63,56 @@ function CreatorInfo() {
   };
 
   const scrollToTop = () => {
-   return (topScroll.current.getNode().scrollToOffset({
-      offset: 0, animated: true
-    }))
-  }
+    return topScroll.current.scrollToOffset({
+      offset: 0,
+      animated: true,
+    });
+  };
 
   useEffect(() => {
     getInfo(page);
     setInitLoading(true);
   }, []);
 
-
   return (
     <View style={styles.container}>
       <Text>{`${creatorInfo.length} 개 page: ${page}`}</Text>
-      <TouchableOpacity activeOpacity={1} style={{height: 20, }} onPress={() => scrollToTop()}></TouchableOpacity>
+      {/* 상단 태그 스크롤 */}
+      <View
+        style={{
+          height: 58,
+          backgroundColor: 'red',
+          marginLeft: 18,
+          flexDirection: 'row',
+        }}
+      >
+        <View
+          style={{
+            width: 71,
+            backgroundColor: 'green',
+            marginRight: 10,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Text>인기순</Text>
+        </View>
+        <ScrollView horizontal={true}>
+          <CreatorTagCard />
+          <CreatorTagCard />
+          <CreatorTagCard />
+          <CreatorTagCard />
+          <CreatorTagCard />
+          <CreatorTagCard />
+          <CreatorTagCard />
+          <CreatorTagCard />
+        </ScrollView>
+      </View>
+      <TouchableOpacity
+        activeOpacity={1}
+        style={{ height: 20 }}
+        onPress={() => scrollToTop()}
+      ></TouchableOpacity>
       {!initLoading ? (
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <ActivityIndicator size="large" color="#f917f9" />
