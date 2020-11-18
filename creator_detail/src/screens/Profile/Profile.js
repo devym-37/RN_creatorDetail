@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Text, ImageBackground } from 'react-native';
+import { View, StyleSheet, ImageBackground } from 'react-native';
 import Header from '../../components/Header';
 import ProfileCard from '../../components/ProfileCard';
+import images from '../../assets';
 
 const styles = StyleSheet.create({
   container: {
-    height: 330,
     backgroundColor: 'green',
+    flex: 1,
   },
   backgroundImg: {
     width: '100%',
@@ -19,7 +20,7 @@ function Profile() {
     <View style={styles.container}>
       <ImageBackground
         style={styles.backgroundImg}
-        source={require('../../assets/rectangle.png')}
+        source={images.profileBackGround}
         resizeMode="cover"
       >
         <Header />
