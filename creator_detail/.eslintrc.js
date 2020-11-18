@@ -23,6 +23,8 @@ module.exports = {
       },
     ],
     'global-require': 0,
+    'import/prefer-default-export': 'off',
+    'react/prop-types': ['enabled', { ignore: 'ignore', customValidators: 'customValidator' }],
   },
   plugins: ['prettier'],
 };
