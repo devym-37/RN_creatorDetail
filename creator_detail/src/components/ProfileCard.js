@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const renderTagItem = (tag) => {
+const renderTagItem = (tag, index) => {
   return (
-    <View style={styles.tagContainer}>
+    <View style={styles.tagContainer} key={index}>
       <Text style={styles.tagText}>{tag}</Text>
     </View>
   );
@@ -141,7 +141,7 @@ const ProfileCard = ({ profile }) => {
           </Text>
           <View style={{ flexDirection: 'row' }}>
             {splitBirth.length !== 0
-              ? splitBirth.map((tag) => renderTagItem(tag))
+              ? splitBirth.map((tag, index) => renderTagItem(tag, index))
               : null}
 
             <View style={styles.triangleButton}>
