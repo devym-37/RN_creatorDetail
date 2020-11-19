@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
+
 import CreatorVideoCard from '../../components/CreatorVideoCard';
 import { getDataApi } from '../../api';
 import { renderer } from 'react-test-renderer';
@@ -22,6 +24,12 @@ const styles = StyleSheet.create({
 });
 
 const LIMIT = 20;
+
+const PICKER = {
+  first: '인기순',
+  second: '최신순',
+  third: '조회수',
+};
 
 function CreatorInfo() {
   const [initLoading, setInitLoading] = useState(false);
@@ -81,7 +89,7 @@ function CreatorInfo() {
       <View
         style={{
           height: 58,
-          backgroundColor: 'red',
+          // backgroundColor: 'red',
           marginLeft: 18,
           flexDirection: 'row',
         }}
@@ -89,15 +97,33 @@ function CreatorInfo() {
         <View
           style={{
             width: 71,
-            backgroundColor: 'green',
+            // backgroundColor: 'green',
             marginRight: 10,
             justifyContent: 'center',
             alignItems: 'center',
+
+            
           }}
         >
-          <Text>인기순</Text>
+          {/* <Picker
+            selectedValue={`${PICKER.first}`}
+            style={{ height: 50, width: 100 }}
+            // onValueChange={(itemValue, itemIndex) =>
+            //   this.setState({language: itemValue})
+            // }
+          >
+            <Picker.Item label={`${PICKER.first}`} value="first" />
+            <Picker.Item
+              label={`${PICKER.second}`}
+              value="second"
+            />
+            <Picker.Item label={`${PICKER.third}`} value={`${PICKER.third}`} />
+          </Picker> */}
+          <Text style={{            borderWidth: 1,
+            borderRadius: 5,
+            }}>인기순</Text>
         </View>
-        <ScrollView horizontal={true}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <CreatorTagCard />
           <CreatorTagCard />
           <CreatorTagCard />
