@@ -15,21 +15,18 @@ const styles = StyleSheet.create({
   },
 });
 
-function Profile() {
+function Profile({profile}) {
   const [loading, setLoading] = useState(false);
-  const [profile, setProfile] = useState(null);
+  const [creator, setCreator] = useState(null);
 
-  const getProfile = async () => {
-    const { data } = await getDataApi.profile();
-    console.log('result', data);
-    setLoading(true);
-    setProfile(data);
-  };
 
   useEffect(() => {
-    getProfile();
+    if(profile){
+      setLoading(true);
+      setCreator(profile);
+    }
   }, []);
-  console.log('profile', profile);
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -38,7 +35,7 @@ function Profile() {
         resizeMode="cover"
       >
         <Header />
-        {loading && profile !== null ? <ProfileCard profile={profile} /> : null}
+        {loading && creator !== null ? <ProfileCard profile={creator} /> : null}
       </ImageBackground>
     </View>
   );

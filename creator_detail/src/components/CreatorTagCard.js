@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     borderRadius: 5,
     marginRight: 8,
+    backgroundColor: '#f3f3f3',
   },
 });
 

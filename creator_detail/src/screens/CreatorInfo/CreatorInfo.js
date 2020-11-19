@@ -84,7 +84,7 @@ function CreatorInfo() {
 
   return (
     <View style={styles.container}>
-      <Text>{`${creatorInfo.length} 개 page: ${page}`}</Text>
+      <Text>{`${creatorInfo.length} 개 page: ${page - 1}`}</Text>
       {/* 상단 태그 스크롤 */}
       <View
         style={{
@@ -96,13 +96,15 @@ function CreatorInfo() {
       >
         <View
           style={{
-            width: 71,
             // backgroundColor: 'green',
             marginRight: 10,
-            justifyContent: 'center',
             alignItems: 'center',
-
-            
+            justifyContent: 'center',
+            height: 34,
+            width: 70,
+            marginTop: 12,
+            borderRadius: 10,
+            backgroundColor: '#f3f3f3',
           }}
         >
           {/* <Picker
@@ -119,9 +121,16 @@ function CreatorInfo() {
             />
             <Picker.Item label={`${PICKER.third}`} value={`${PICKER.third}`} />
           </Picker> */}
-          <Text style={{            borderWidth: 1,
-            borderRadius: 5,
-            }}>인기순</Text>
+          <Text
+            style={{
+              paddingRight: 10,
+              paddingLeft: 10,
+              paddingTop: 10,
+              paddingBottom: 10,
+            }}
+          >
+            최신순
+          </Text>
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <CreatorTagCard />

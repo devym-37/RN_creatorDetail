@@ -107,6 +107,7 @@ const ProfileCard = ({ profile }) => {
       <View style={styles.profile}>
         <View style={{ marginTop: 40, alignItems: 'center' }}>
           <Text style={{ marginBottom: 10, backgroundColor: '#fff' }}>
+          <Text>{console.log('profile', profile)}</Text>
             {name}
           </Text>
           <View style={{ flexDirection: 'row' }}>
