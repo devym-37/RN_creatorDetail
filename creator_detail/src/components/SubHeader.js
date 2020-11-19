@@ -10,14 +10,6 @@ import {
 import images from '../assets/index';
 
 const styles = StyleSheet.create({
-  container: {
-    height: 44,
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: 18,
-    marginRight: 18,
-
-  },
   partnerBtn: {
     marginRight: 15,
     fontSize: 14,
@@ -32,6 +24,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
   buttonImg: {
+    marginLeft: 18,
     width: 24,
     height: 24,
   },
@@ -52,9 +45,9 @@ const styles = StyleSheet.create({
 
 const SubHeader = ({profile}) => {
   const { name, profile_path } = profile;
-  console.log('profile', profile)
+
   return (
-    <View style={styles.container}>
+    <>
       <TouchableOpacity
         onPress={() => {
           Alert.alert('back button');
@@ -82,7 +75,7 @@ const SubHeader = ({profile}) => {
           />
         </TouchableOpacity>
       <Text>{name}</Text>
-    </View>
+    </>
   );
 };
 

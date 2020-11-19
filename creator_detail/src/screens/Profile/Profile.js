@@ -6,12 +6,8 @@ import images from '../../assets';
 import { getDataApi } from '../../api';
 
 const styles = StyleSheet.create({
-  container: {
-
-  },
   backgroundImg: {
     width: '100%',
-
   },
 });
 
@@ -28,7 +24,7 @@ function Profile({profile}) {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <>
       <ImageBackground
         style={styles.backgroundImg}
         source={images.profileBackGround}
@@ -37,7 +33,7 @@ function Profile({profile}) {
         <Header />
         {loading && creator !== null ? <ProfileCard profile={creator} /> : null}
       </ImageBackground>
-    </View>
+    </>
   );
 }
 
